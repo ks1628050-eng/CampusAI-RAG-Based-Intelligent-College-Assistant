@@ -1,0 +1,34 @@
+{
+  "name": "campus-ai-backend",
+  "version": "1.0.0",
+  "description": "RAG-Based College Chatbot Backend API with Vector Search & Multi-Collection Ingestion",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/seed/seedData.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.9.4",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^11.1.0"
+  },
+  "keywords": [
+    "rag",
+    "chatbot",
+    "college",
+    "vector-search",
+    "embeddings",
+    "ai"
+  ],
+  "author": "CampusAI Team",
+  "license": "MIT"
+}

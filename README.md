@@ -25,29 +25,31 @@ In educational institutions, students and applicants routinely struggle to find 
 
 ## 3. Features
 
-### ⭐ Core RAG & Intelligence Features
+### ⭐ Core / Must-Have Features
 - **Interactive Student Chat Portal**: Students can ask questions across all campus domains in natural language.
-- **Role-Based Authentication (RBAC)**: Secure JWT authentication supporting `Student` and `Admin` accounts + One-Click Demo evaluation buttons.
-- **Document Ingestion Engine**: Upload PDFs (`.pdf`), text files (`.txt`), and Markdown (`.md`).
-- **Text Extraction & Sliding-Window Chunking**: Splits institutional documents into overlapping chunks (~250 words, 50-word overlap) preserving paragraph and section headers.
-- **Vector Embeddings & Persistent Vector Store**: Generates dense numerical embeddings and stores them with rich metadata (doc title, category, department, page number).
-- **Hybrid Retrieval (Vector + BM25)**: Combines dense vector cosine similarity with lexical BM25 token matching for exact acronyms and policies.
-- **Strict Grounding & Zero Hallucination**: Synthesizes answers strictly using retrieved context.
-- **Verifiable Source Citations**: Shows clickable source tags (e.g., `Admissions Guide 2026 • Page 2`) opening the exact chunk inspector.
-- **Unknown Question Detector**: Calibrated confidence threshold detector that flags low-confidence queries for college administration review.
-- **Conversation History & Session Memory**: Full multi-session chat history with create, switch, and delete actions.
-- **Admin Document Management**: Upload, inspect vector chunks, summarize, generate FAQs, and delete documents with automatic vector index purging.
+- **User Authentication (RBAC)**: Secure JWT authentication supporting `Student` and `Admin` accounts + One-Click Demo evaluation logins.
+- **Document Upload & Ingestion**: Upload institutional PDFs (`.pdf`), text files (`.txt`), and Markdown (`.md`).
+- **Document Processing (Text Extraction & Chunking)**: Extracts raw text and splits documents into overlapping chunks (~250 words, 50-word overlap) preserving contextual section headers.
+- **Embedding Generation**: Vectorizes chunks into dense semantic embeddings using Google Gemini `text-embedding-004` (with local vector engine fallback).
+- **Vector Database & Semantic Search**: Stores dense numerical vectors with rich metadata (doc title, category, department, page number).
+- **Hybrid RAG Pipeline**: Combines dense vector cosine similarity with lexical BM25 token matching for exact numerical and policy matching.
+- **AI-Generated Grounded Answers**: Synthesizes structured, student-friendly answers strictly based on retrieved knowledge base excerpts.
+- **Source & Reference Display**: Displays verifiable, clickable source citation badges with exact page references and chunk inspector.
+- **Unknown Question Handling**: Calibrated confidence threshold detector that gracefully informs the student and logs the query to the Admin Review Queue.
+- **Chat History & Conversation Context**: Multi-session persistent chat history with create, switch, and delete capabilities.
+- **Admin Document Management**: Full administrative CRUD to upload, inspect vector chunks, generate executive summaries, create FAQs, and delete documents.
+- **Database & Storage Integration**: Dual-mode persistence with MongoDB Atlas cloud sync and persistent local store.
+- **Frontend–Backend Integration**: Complete REST API and Event Streaming architecture.
 
-### 🌟 Advanced & Submission Excellence Features
-- **⚡ Real-Time RAG Diagnostic Inspector**: Displays exact query execution latency (`latencyMs`), hybrid retrieval stages, and zero-hallucination verification seal on every response.
-- **🎯 1-Click Evaluator Benchmark Suite**: 6 curated gold-standard test scenarios (Admissions, Fees, Hostel, Exams, Placements, Unknown Query) for rapid evaluation.
+### 🚀 Bonus / Advanced Features
+- **⚡ Real-Time RAG Diagnostic Inspector**: Live execution latency (`latencyMs`), chunk search depth, and zero-hallucination verification seal on every response.
+- **🎯 1-Click Evaluator Benchmark Suite**: 6 curated gold-standard test scenarios (Admissions, Fees, Hostel, Exams, Placements, Unknown Query).
 - **📜 Certified Inquiry Transcript Export**: Exports formatted, timestamped official inquiry reports (`.md` / print-ready) with citation seals.
 - **🚨 Campus Emergency Helplines Directory**: 1-click contact copy for Anti-Ragging, Campus Ambulance, Women’s Safety Cell, and Exam Helplines.
-- **🔍 Institutional Policy Diff Tool**: Side-by-side comparative semantic analysis across any two college guidelines or handbook versions.
+- **🔍 Institutional Policy Diff Tool**: Side-by-side comparative semantic analysis across any two college circulars or guideline versions.
 - **📊 Compliance & Audit Log Export (CSV)**: 1-click download of institutional inquiry telemetry.
-- **🍃 MongoDB Atlas Cloud Integration**: Dual-mode persistence with automatic collection synchronization and graceful local fallback.
 - **🌓 Dark & Light Mode Theme Engine**: Persistent theme switching across all views, cards, modals, and markdown components.
-- **🎙️ Speech-to-Text & Text-to-Speech**: Voice input questioning and natural audio playback.
+- **🎙️ Speech-to-Text & Text-to-Speech**: Hands-free voice questioning (STT) and voice audio playback (TTS).
 - **🌐 Multi-Language Support**: Dropdown translation for English, Hindi, Telugu, Spanish, French, and German.
 - **📑 Preloaded Institutional Knowledge Base**: Shipped with 5 complete official documents (Admissions 2026, Fee Structure, Hostel Rules, Academic Regulations, Placement Report).
 
@@ -57,7 +59,7 @@ In educational institutions, students and applicants routinely struggle to find 
 
 | Layer | Technologies Used |
 |---|---|
-| **Frontend** | React 18, Vite, TailwindCSS v3, Lucide Icons, Web Speech API (STT & TTS) |
+| **Frontend** | React 18, Vite, TailwindCSS v3, Lucide React Icons, Web Speech API (STT & TTS) |
 | **Backend API** | Node.js, Express.js (ES Modules), Mongoose, CORS, Multer |
 | **Vector Engine & RAG** | Dense Vector Embeddings, Cosine Similarity, BM25 Lexical Ranking, Google Gemini SDK (`@google/generative-ai`) |
 | **Document Processing** | `pdf-parse`, Sliding-Window Chunker with overlap |
@@ -66,8 +68,9 @@ In educational institutions, students and applicants routinely struggle to find 
 
 ---
 
-## 5. System Architecture & RAG Flow
+## 5. Screenshots & Architecture
 
+### System Architecture & RAG Pipeline Flow
 ```
 +-------------------------------------------------------------------------+
 |                          STUDENT USER / ADMIN                           |
@@ -111,21 +114,34 @@ In educational institutions, students and applicants routinely struggle to find 
 
 ---
 
-## 6. Quick Start Guide (Local Development)
+## 6. Live Demo
+- **Live Deployed Application**: [CampusAI on Render](https://campusai-rag-based-intelligent-college.onrender.com) *(or your deployed Render/Vercel URL)*
+- **GitHub Repository**: [https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant](https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant)
 
-### 1. Clone & Install Dependencies
+---
+
+## 7. Backend
+- **Live Backend API Endpoint**: `https://campusai-rag-based-intelligent-college.onrender.com/api`
+- **Health Check & Diagnostics**: `https://campusai-rag-based-intelligent-college.onrender.com/api/health`
+
+---
+
+## 8. Setup Instructions (Local Development)
+
+### Step 1: Clone Repository
 ```bash
 git clone https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant.git
 cd CampusAI-RAG-Based-Intelligent-College-Assistant
+```
 
-# Install root, backend, and frontend dependencies in one command
+### Step 2: Install All Dependencies
+```bash
 npm run install:all
 ```
 
-### 2. Configure Environment Variables
-Copy the example environment files:
+### Step 3: Configure Environment Variables
+Create your `backend/.env` file:
 ```bash
-# Backend Environment:
 cp backend/.env.example backend/.env
 ```
 
@@ -138,51 +154,28 @@ JWT_SECRET=campus_ai_super_secret_jwt_key_2026
 # Optional: MongoDB Atlas Cloud Database URI
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/campus_ai?retryWrites=true&w=majority
 
-# Optional: Google Gemini API Key (system includes built-in semantic vector retrieval fallback)
+# Optional: Google Gemini API Key
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### 3. Run Backend and Frontend Concurrently
+### Step 4: Run Application
 ```bash
 npm run dev
 ```
 
 Open `http://localhost:5173` in your browser.
-- Click **"Sign In / Demo"** -> Select **"Demo Student"** or **"Demo Admin"**!
+- Click **"Sign In / Demo"** -> Select **"Demo Student"** or **"Demo Admin"** for immediate access.
 
 ---
 
-## 7. Git & Production Deployment
-
-For complete step-by-step instructions on pushing to GitHub and deploying to **Render**, **Railway**, or **Vercel**, refer to the dedicated guide:
-
-👉 **[Read the Full Deployment Guide (DEPLOY.md)](./DEPLOY.md)**
-
-### Quick Git Commands:
-```bash
-# 1. Initialize & Stage files
-git init
-git add .
-
-# 2. Commit
-git commit -m "feat: complete CampusAI RAG college chatbot"
-
-# 3. Push to GitHub
-git branch -M main
-git remote add origin https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant.git
-git push -u origin main
-```
-
----
-
-## 8. Environment Variables Reference
+## 9. Environment Variables
 
 ### Backend (`backend/.env`)
 | Variable | Description | Default | Required? |
 |---|---|---|---|
 | `PORT` | Backend server port | `5000` | No |
-| `NODE_ENV` | Environment mode | `development` | No |
-| `JWT_SECRET` | Secret key for JWT signing | `campus_ai_super_secret_jwt_key_2026` | Yes |
+| `NODE_ENV` | Environment mode (`development` / `production`) | `development` | No |
+| `JWT_SECRET` | Secret key for JWT signing & verification | `campus_ai_super_secret_jwt_key_2026` | Yes |
 | `MONGODB_URI` | MongoDB Atlas Connection URI (`mongodb+srv://...`) | *Optional* | No (Local fallback enabled) |
 | `GEMINI_API_KEY` | Google Gemini API Key for LLM & Embeddings | *Optional* | No (Local fallback enabled) |
 
@@ -193,8 +186,8 @@ git push -u origin main
 
 ---
 
-## 9. Preloaded Official College Documents
-The application includes 5 preloaded institutional documents:
+## 10. Preloaded Institutional Knowledge Base Documents
+The application includes 5 preloaded official institutional documents:
 1. `Admissions Guide & Eligibility 2026` (Eligibility, cutoff ranks, counseling rounds, documents required)
 2. `Fee Structure & Scholarships 2026` (Tuition fees, mess fees, merit waivers, refund policy)
 3. `Hostel Rules & Campus Facilities` (Curfew timings, night out ERP pass, prohibited appliances, healthcare)
@@ -203,5 +196,5 @@ The application includes 5 preloaded institutional documents:
 
 ---
 
-## 10. License
+## 11. License
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.

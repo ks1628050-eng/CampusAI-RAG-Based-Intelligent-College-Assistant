@@ -115,8 +115,8 @@ In educational institutions, students and applicants routinely struggle to find 
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone https://github.com/YOUR_USERNAME/campus-ai-rag-chatbot.git
-cd campus-ai-rag-chatbot
+git clone https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant.git
+cd CampusAI-RAG-Based-Intelligent-College-Assistant
 
 # Install root, backend, and frontend dependencies in one command
 npm run install:all
@@ -169,7 +169,7 @@ git commit -m "feat: complete CampusAI RAG college chatbot"
 
 # 3. Push to GitHub
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/campus-ai-rag-chatbot.git
+git remote add origin https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant.git
 git push -u origin main
 ```
 

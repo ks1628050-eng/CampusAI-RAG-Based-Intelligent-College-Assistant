@@ -39,8 +39,8 @@ git commit -m "feat: complete CampusAI RAG college chatbot with MongoDB Atlas an
 # 4. Set default branch to main
 git branch -M main
 
-# 5. Link your remote GitHub repository (replace with your actual GitHub URL)
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/campus-ai-rag-chatbot.git
+# 5. Link your remote GitHub repository
+git remote add origin https://github.com/ks1628050-eng/CampusAI-RAG-Based-Intelligent-College-Assistant.git
 
 # 6. Push code to GitHub
 git push -u origin main
@@ -55,7 +55,7 @@ Render allows you to host both the React frontend and Express backend as a **sin
 ### Steps:
 1. Log in to [Render.com](https://dashboard.render.com).
 2. Click **New +** → **Web Service**.
-3. Connect your GitHub repository (`campus-ai-rag-chatbot`).
+3. Connect your GitHub repository (`CampusAI-RAG-Based-Intelligent-College-Assistant`).
 4. Configure the service settings:
    - **Name**: `campus-ai-rag`
    - **Language / Runtime**: `Node`
